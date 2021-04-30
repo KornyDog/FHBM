@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body { /*color of background image, and all text inside the body tag in html*/
+    background-color: #070707;
+    color: silver;
+}
+
+.grid { /*grid defined in columns and rows and then laid out in an area at the bottom.*/
+        /*NOTE Adding another line requires another 1fr or corresponding in grid-template-rows.*/
+        /*SIX(6) Columns are defined, where FOUR(4) are main use, and TWO(2) are margins*/ 
+    display: grid;
+    grid-gap: 6px;
+    grid-template-columns: 1fr 350px 350px 350px 350px 1fr;
+    grid-template-rows: auto 40px 1fr 1fr 40px;
+    grid-template-areas: 
+    ". title title title title ."
+    ". header header header header ."
+    ". sidebar1 content1 content1 content1 ."
+    ". content2 content2 content2 sidebar2 ."
+    ". footer footer footer footer .";
+    
+
+}
+
+.title { /*Customizes the big text at the top*/
+    grid-area: title;
+    font-size: 50px;
+    text-align: center;
+}
+
+.header { /*Customizes the text below the title*/
+    grid-area: header;
+    text-align: center;
+}
+
+
+.sidebar1 { /*Picture for the first hero section*/
+    grid-area: sidebar1;
+    position: unset;
+    text-align: center;
+}
+.content1 { /*Text for the first hero section*/
+    grid-area: content1;
+    display: grid;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+.sidebar2 { /*Picture for the second hero section*/
+    grid-area: sidebar2;
+    position: unset;
+    text-align: center;
+}
+.content2 { /*Text for the first hero section*/
+    grid-area: content2;
+    display: grid;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+.footer {
+    grid-area: footer;
+}
+
+img { /*Defines position of how pictures are placed inside divs*/
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*These two can make every second line change color*/ 
+/*If left as equal colors these allow a customizable color difference between background and div elements*/
+.grid div:nth-child(even)  {
+    background-color: #111111;
+}
+.grid div:nth-child(odd)  {
+    background-color: #111111;
+}
